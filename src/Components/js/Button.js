@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import '../scss/Button.scss'
 import PropTypes from 'prop-types'
-export default class Button extends Component {
+import Xicon from './Icon'
+export default class Xbutton extends Component {
     static defaultProps = {
         iconPosition: 'left'
     }
@@ -12,17 +13,15 @@ export default class Button extends Component {
     render() {
         return (
             <button className={`x-button ${this.props.iconPosition}`}>
-                <svg className="icon" aria-hidden="true">
-                    <use xlinkHref={`#i-${this.props.icon}`}></use>
-                </svg>
+                <Xicon name={this.props.icon}/>
                 <div className="content">
                     {this.props.children}
-                </div>
+                </div> 
             </button>
         )
     }
 }
 
-Button.propTypes = {
+Xbutton.propTypes = {
     iconPosition: PropTypes.oneOf(['left', 'right'])
 }

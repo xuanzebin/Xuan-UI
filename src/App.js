@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Button icon="setting">按钮</Button>
+        <Button icon="setting" iconPosition="left">按钮</Button>
         <Button icon="setting" iconPosition="right">按钮</Button>
         <Button icon="setting">按钮</Button>
       </div>

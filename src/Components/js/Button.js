@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import '../scss/Button.scss'
-export default class Button extends Component{
-    constructor(){
+import PropTypes from 'prop-types'
+export default class Button extends Component {
+    static defaultProps = {
+        iconPosition: 'left'
+    }
+    constructor() {
         super()
         this.state={}
     }
-    render(){
+    render() {
         return (
             <button className={`x-button ${this.props.iconPosition}`}>
                 <svg className="icon" aria-hidden="true">
@@ -17,4 +21,8 @@ export default class Button extends Component{
             </button>
         )
     }
+}
+
+Button.propTypes = {
+    iconPosition: PropTypes.oneOf(['left', 'right'])
 }

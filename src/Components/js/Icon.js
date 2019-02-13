@@ -8,7 +8,7 @@ export default class Xicon extends Component {
     render() {
         return (
             this.props.name?
-            <svg className="x-icon" aria-hidden="true">
+            <svg className={`x-icon ${this.props.className}`} aria-hidden="true">
                 <use xlinkHref={`#i-${this.props.name}`}></use>
             </svg>:''
         )

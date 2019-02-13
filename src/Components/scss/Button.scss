@@ -18,4 +18,11 @@
         .x-icon { order: 2; margin-right: 0; margin-left: .3em; }
         .content { order: 1; }
     }
+    .loading {
+        animation: spin infinite linear 2s;
+    }
+}
+@keyframes spin {
+    0%{ transform: rotate(0deg); }
+    100%{ transform: rotate(360deg); }
 }

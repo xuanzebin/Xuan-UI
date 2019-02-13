@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import Xicon from './Icon'
 export default class Xbutton extends Component {
     static defaultProps = {
-        iconPosition: 'left'
+        iconPosition: 'left',
+        loading:false
     }
     constructor() {
         super()
@@ -12,8 +13,12 @@ export default class Xbutton extends Component {
     }
     render() {
         return (
-            <button className={`x-button ${this.props.iconPosition}`}>
-                <Xicon name={this.props.icon}/>
+            <button className={`x-button ${this.props.iconPosition}`} onClick={this.props.onClick}>
+                {
+                    this.props.loading?
+                    <Xicon className="loading" name="loading"/>:
+                    <Xicon name={this.props.icon}/>
+                }
                 <div className="content">
                     {this.props.children}
                 </div> 
@@ -23,5 +28,6 @@ export default class Xbutton extends Component {
 }
 
 Xbutton.propTypes = {
-    iconPosition: PropTypes.oneOf(['left', 'right'])
+    iconPosition: PropTypes.oneOf(['left', 'right']),
+    loading: PropTypes.bool
 }

@@ -7,7 +7,14 @@ export default class Button extends Component{
     }
     render(){
         return (
-            <button className="x-button">{this.props.children}</button>
+            <button className={`x-button ${this.props.iconPosition}`}>
+                <svg className="icon" aria-hidden="true">
+                    <use xlinkHref={`#i-${this.props.icon}`}></use>
+                </svg>
+                <div className="content">
+                    {this.props.children}
+                </div>
+            </button>
         )
     }
 }

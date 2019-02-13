@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Xbutton from './Components/js/Button'
+import XButton from './Components/js/Button'
+import XButtonGroup from './Components/js/ButtonGroup'
 class App extends Component {
   constructor(){
     super()
@@ -12,14 +13,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Xbutton icon="setting" iconPosition="left">按钮</Xbutton>
-        <Xbutton icon="setting" iconPosition="right" loading={this.state.loading} onClick={this.handleClick}>按钮</Xbutton>
-        <Xbutton>按钮</Xbutton>
+        <div className="box">
+          <XButton icon="setting" iconPosition="left">按钮</XButton>
+          <XButton icon="setting" iconPosition="right" loading={this.state.loading} onClick={this.handleClick}>按钮</XButton>
+          <XButton>按钮</XButton>
+        </div>
+        <XButtonGroup>
+          <XButton icon="left" iconPosition="left">按钮</XButton>
+          <XButton>按钮</XButton>
+          <XButton icon="right" iconPosition="right">按钮</XButton>
+        </XButtonGroup>
       </div>
     );
   }
   handleClick(){
-    console.log(1)
     this.setState({
       loading:!this.state.loading
     })

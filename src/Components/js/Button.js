@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '../scss/Button.scss'
 import PropTypes from 'prop-types'
-import Xicon from './Icon'
-export default class Xbutton extends Component {
+import XIcon from './Icon'
+export default class XButton extends Component {
     static defaultProps = {
         iconPosition: 'left',
         loading:false
@@ -13,11 +13,11 @@ export default class Xbutton extends Component {
     }
     render() {
         return (
-            <button className={`x-button ${this.props.iconPosition}`} onClick={this.props.onClick}>
+            <button className={`x-button ${this.props.className} ${this.props.iconPosition}`} onClick={this.props.onClick}>
                 {
                     this.props.loading?
-                    <Xicon className="loading" name="loading"/>:
-                    <Xicon name={this.props.icon}/>
+                    <XIcon className="loading" name="loading"/>:
+                    <XIcon name={this.props.icon}/>
                 }
                 <div className="content">
                     {this.props.children}
@@ -27,7 +27,7 @@ export default class Xbutton extends Component {
     }
 }
 
-Xbutton.propTypes = {
+XButton.propTypes = {
     iconPosition: PropTypes.oneOf(['left', 'right']),
     loading: PropTypes.bool
 }

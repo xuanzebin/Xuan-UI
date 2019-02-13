@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../scss/Icon.scss'
-export default class Xicon extends Component {
+export default class XIcon extends Component {
     constructor() {
         super()
         this.state={}
